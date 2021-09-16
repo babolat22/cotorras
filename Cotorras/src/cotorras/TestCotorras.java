@@ -5,6 +5,7 @@ public class TestCotorras {
         Golondrina g3 = new Golondrina(); 
         g1 = new Golondrina(); 
         Condor c = new Condor();
+        Condor condorito = new Condor();
         
         g1.comerAlpiste(50);
         System.out.println("La energia de la cotorra es: "+g1.getEnergia());
