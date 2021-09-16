@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="TestHerencia">
+  <ClassDiagramComponents>
+    <Class name="Guerrero" package="testherencia" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="caballo" type="boolean" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="Avanzar" returnType="void" visibility="package"/>
+        <Method name="Disparar" returnType="void" visibility="package"/>
+      </Methods>
+    </Class>
+    <Class name="Personaje" package="testherencia" visibility="public" xPosition="208.0" yPosition="20.0">
+      <Fields>
+        <Field name="ubicacion" type="Position" visibility="package"/>
+        <Field name="nick" type="String" visibility="package"/>
+        <Field name="vidas" type="int" visibility="package"/>
+        <Field name="energia" type="int" visibility="package"/>
+        <Field name="orientacion" type="char" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="Disparar" returnType="void" visibility="package"/>
+        <Method name="Girar" returnType="void" visibility="package"/>
+        <Method name="Avanzar" returnType="void" visibility="package"/>
+      </Methods>
+    </Class>
+    <Class name="Position" package="testherencia" visibility="public" xPosition="409.0" yPosition="20.0">
+      <Fields>
+        <Field name="x" type="int" visibility="package"/>
+        <Field name="y" type="int" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="TestHerencia" package="testherencia" visibility="public" xPosition="191.0" yPosition="293.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="testherencia.Guerrero" target="testherencia.Personaje"/>
+    <HasRelation name="ubicacion" source="testherencia.Personaje" target="testherencia.Position" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

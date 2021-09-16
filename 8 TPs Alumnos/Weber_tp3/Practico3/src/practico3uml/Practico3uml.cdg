@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Practico3">
+  <ClassDiagramComponents>
+    <Class name="Jubilado" package="practico3" visibility="public" xPosition="63.0" yPosition="495.0">
+      <Fields/>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="dni"/>
+          <Argument type="LocalDate" name="fechaNac"/>
+          <Argument type="String" name="domicilio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="cobrar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Persona" package="practico3" visibility="public" isAbstract="true" xPosition="680.0" yPosition="250.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="dni" type="String" visibility="private" isFinal="true"/>
+        <Field name="fechaNac" type="LocalDate" visibility="private" isFinal="true"/>
+        <Field name="domicilio" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="dni"/>
+          <Argument type="LocalDate" name="fechaNac"/>
+          <Argument type="String" name="domicilio"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="getDni" returnType="String" visibility="public"/>
+        <Method name="getFechaNac" returnType="LocalDate" visibility="public"/>
+        <Method name="getDomicilio" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="setDomicilio" returnType="void" visibility="public">
+          <Argument type="String" name="domicilio"/>
+        </Method>
+        <Method name="calcularEdad" returnType="void" visibility="public"/>
+        <Method name="calcularDiasVividos" returnType="void" visibility="public"/>
+        <Method name="cobrar" returnType="void" visibility="public" isAbstract="true"/>
+      </Methods>
+    </Class>
+    <Class name="Practico3" package="practico3" visibility="public" xPosition="487.0" yPosition="60.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Registro" package="practico3" visibility="public" xPosition="868.0" yPosition="60.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="procesarDatos" returnType="void" visibility="public">
+          <Argument type="Persona" name="persona"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Trabajador" package="practico3" visibility="public" xPosition="63.0" yPosition="250.0">
+      <Fields>
+        <Field name="sueldo" type="double" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="dni"/>
+          <Argument type="LocalDate" name="fechaNac"/>
+          <Argument type="String" name="domicilio"/>
+          <Argument type="double" name="sueldo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getSueldo" returnType="double" visibility="public"/>
+        <Method name="setSueldo" returnType="void" visibility="public">
+          <Argument type="double" name="sueldo"/>
+        </Method>
+        <Method name="hacerAportes" returnType="void" visibility="public"/>
+        <Method name="cobrar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="Pasivo" package="practico3" visibility="public" xPosition="63.0" yPosition="60.0">
+      <Methods>
+        <Method name="hacerAportes" returnType="void" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <IsRelation name="is" source="practico3.Trabajador" target="practico3.Persona"/>
+    <UseRelation name="" source="practico3.Registro" target="practico3.Persona" sourceCardinality="1..1" targetCardinality="0..1"/>
+    <IsRelation name="is" source="practico3.Jubilado" target="practico3.Persona"/>
+    <UseRelation name="Usa" source="practico3.Practico3" target="practico3.Registro" sourceCardinality="1..1" targetCardinality="0..1"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="practico3.Trabajador" target="practico3.Pasivo"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

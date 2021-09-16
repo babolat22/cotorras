@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="RelacionesUML">
+  <ClassDiagramComponents>
+    <Class name="RelacionesUML" package="relacionesuml" visibility="public" xPosition="16.0" yPosition="331.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="String[]" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="A" package="relacionesuml" visibility="public" xPosition="315.0" yPosition="20.0">
+      <Fields>
+        <Field name="a" type="int" visibility="package"/>
+        <Field name="atrib" type="B" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="setAtrib" returnType="B" visibility="public">
+          <Argument type="B" name="atrib"/>
+        </Method>
+        <Method name="usar" returnType="C" visibility="package">
+          <Argument type="C" name="c1"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="B" package="relacionesuml" visibility="public" xPosition="315.0" yPosition="238.0">
+      <Fields>
+        <Field name="msj" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="mens"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="C" package="relacionesuml" visibility="public" xPosition="41.0" yPosition="20.0">
+      <Fields>
+        <Field name="cad" type="String" visibility="package"/>
+        <Field name="nros" type="int[]" visibility="package"/>
+        <Field name="ces" type="C[]" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getCad" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="D" package="relacionesuml" visibility="public" xPosition="578.0" yPosition="20.0">
+      <Fields>
+        <Field name="a1" type="A" visibility="package"/>
+        <Field name="g1" type="G" visibility="package"/>
+        <Field name="puntos" type="int" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="A" name="a1"/>
+          <Argument type="B" name="b1"/>
+          <Argument type="int" name="puntos"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="E" package="relacionesuml" visibility="public" xPosition="586.0" yPosition="200.0">
+      <Fields>
+        <Field name="Compo" type="F" visibility="package"/>
+        <Field name="Agrega" type="B" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nom"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="addB" returnType="B" visibility="public">
+          <Argument type="B" name="elB"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="F" package="relacionesuml" visibility="public" xPosition="844.0" yPosition="200.0">
+      <Fields>
+        <Field name="nom" type="String" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nom"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+    <Class name="G" package="" visibility="public" xPosition="844.0" yPosition="58.0">
+      <Fields/>
+      <Constructors/>
+      <Methods/>
+    </Class>
+    <Class name="H" package="" visibility="public" xPosition="34.0" yPosition="190.0">
+      <Fields>
+        <Field name="h1" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="mens"/>
+          <Argument type="double" name="valor"/>
+        </Constructor>
+      </Constructors>
+      <Methods/>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="Compo" source="relacionesuml.E" target="relacionesuml.F" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="atrib" source="relacionesuml.A" target="relacionesuml.B" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="H" target="relacionesuml.B"/>
+    <UseRelation source="relacionesuml.A" target="relacionesuml.C" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="Agrega" source="relacionesuml.E" target="relacionesuml.B" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="a1" source="relacionesuml.D" target="relacionesuml.A" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="g1" source="relacionesuml.D" target="G" type="Default" sourceCardinality="0..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

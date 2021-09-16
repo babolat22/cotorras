@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Reclamos Mumuki">
+  <ClassDiagramComponents>
+    <Class name="CentroDeAtencion" package="reclamos.mumuki" visibility="public" xPosition="48.0" yPosition="69.0">
+      <Fields>
+        <Field name="reclamados" type="LinkedList&lt;Reclamo&gt;" visibility="package"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="aceptarReclamo" returnType="void" visibility="public">
+          <Argument type="Reclamo" name="r"/>
+        </Method>
+        <Method name="mostrarReclamos" returnType="List&lt;Reclamo&gt;" visibility="public"/>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ReclamoComun" package="reclamos.mumuki" visibility="public" xPosition="182.0" yPosition="323.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="reclamoadicional"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="agregate" returnType="void" visibility="public">
+          <Argument type="LinkedList&lt;Reclamo&gt;" name="reclamados"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="ReclamoPrioritario" package="reclamos.mumuki" visibility="public" xPosition="570.0" yPosition="323.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="agregate" returnType="void" visibility="public">
+          <Argument type="LinkedList&lt;Reclamo&gt;" name="reclamados"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Interface name="Reclamo" package="reclamos.mumuki" visibility="public" xPosition="359.0" yPosition="93.0">
+      <Methods>
+        <Method name="agregate" returnType="void" visibility="package">
+          <Argument type="LinkedList&lt;Reclamo&gt;" name="reclamados"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="reclamos.mumuki.ReclamoComun" target="reclamos.mumuki.Reclamo"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="reclamos.mumuki.ReclamoPrioritario" target="reclamos.mumuki.Reclamo"/>
+    <HasRelation name="reclamados" source="reclamos.mumuki.CentroDeAtencion" target="reclamos.mumuki.Reclamo" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="LinkedList&lt;Reclamo&gt;"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="guerrero">
+  <ClassDiagramComponents>
+    <Class name="Guerrero" package="guerrero" visibility="public" xPosition="40.0" yPosition="263.0">
+      <Fields>
+        <Field name="caballo" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="boolean" name="caballo"/>
+          <Argument type="Position" name="position"/>
+          <Argument type="String" name="nick"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="avanzar" returnType="void" visibility="public"/>
+        <Method name="disparar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Personaje" package="guerrero" visibility="public" xPosition="409.0" yPosition="9.0">
+      <Fields>
+        <Field name="position" type="Position" visibility="public"/>
+        <Field name="nick" type="String" visibility="public"/>
+        <Field name="vidas" type="int" visibility="public"/>
+        <Field name="energia" type="int" visibility="public"/>
+        <Field name="orientacion" type="char" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Position" name="position"/>
+          <Argument type="String" name="nick"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="disparar" returnType="void" visibility="public"/>
+        <Method name="Girar" returnType="void" visibility="public"/>
+        <Method name="avanzar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Position" package="guerrero" visibility="public" xPosition="739.0" yPosition="75.0">
+      <Fields>
+        <Field name="x" type="int" visibility="private"/>
+        <Field name="y" type="int" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="setX" returnType="void" visibility="public">
+          <Argument type="int" name="x"/>
+        </Method>
+        <Method name="setY" returnType="void" visibility="public">
+          <Argument type="int" name="y"/>
+        </Method>
+        <Method name="getX" returnType="int" visibility="public"/>
+        <Method name="getY" returnType="int" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="testHerencia" package="guerrero" visibility="public" xPosition="914.0" yPosition="320.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="position" source="guerrero.Personaje" target="guerrero.Position" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="guerrero.Guerrero" target="guerrero.Personaje"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

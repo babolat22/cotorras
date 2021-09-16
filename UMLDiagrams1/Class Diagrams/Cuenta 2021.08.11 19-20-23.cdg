@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Cuenta">
+  <ClassDiagramComponents>
+    <Class name="Cuenta" package="cuenta" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="titular" type="String" visibility="private"/>
+        <Field name="cantidad" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="titular"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="String" name="titular"/>
+          <Argument type="double" name="cantidad"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getTitular" returnType="String" visibility="public"/>
+        <Method name="setTitular" returnType="void" visibility="public">
+          <Argument type="String" name="titular"/>
+        </Method>
+        <Method name="getCantidad" returnType="double" visibility="public"/>
+        <Method name="setCantidad" returnType="void" visibility="public">
+          <Argument type="double" name="cantidad"/>
+        </Method>
+        <Method name="ingresar" returnType="void" visibility="public">
+          <Argument type="double" name="cantidad"/>
+        </Method>
+        <Method name="retirar" returnType="void" visibility="public">
+          <Argument type="double" name="cantidad"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="CuentaApp" package="cuenta" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations/>
+</ClassDiagram>

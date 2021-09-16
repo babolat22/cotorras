@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="herencia">
+  <ClassDiagramComponents>
+    <Class name="Auto" package="herencia" visibility="public" xPosition="1107.0" yPosition="45.0">
+      <Fields>
+        <Field name="patente" type="String" visibility="private"/>
+        <Field name="modelo" type="String" visibility="private"/>
+        <Field name="combustible" type="double" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="patente"/>
+          <Argument type="String" name="modelo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getPatente" returnType="String" visibility="public"/>
+        <Method name="setPatente" returnType="void" visibility="public">
+          <Argument type="String" name="patente"/>
+        </Method>
+        <Method name="getModelo" returnType="String" visibility="public"/>
+        <Method name="setModelo" returnType="void" visibility="public">
+          <Argument type="String" name="modelo"/>
+        </Method>
+        <Method name="avanzar" returnType="void" visibility="public">
+          <Argument type="double" name="metros"/>
+        </Method>
+        <Method name="retroceder" returnType="void" visibility="public">
+          <Argument type="double" name="metros"/>
+        </Method>
+        <Method name="llenarTanque" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Casa" package="herencia" visibility="public" xPosition="434.0" yPosition="13.0">
+      <Fields>
+        <Field name="zona" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="zona"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getZona" returnType="String" visibility="public"/>
+        <Method name="setZona" returnType="void" visibility="public">
+          <Argument type="String" name="zona"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="HerenciaFamiliar" package="herencia" visibility="public" xPosition="1107.0" yPosition="375.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Hijo" package="herencia" visibility="public" xPosition="434.0" yPosition="263.0">
+      <Fields>
+        <Field name="nom" type="String" visibility="private"/>
+        <Field name="dinero" type="double" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="nom"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="Auto" name="auto"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getNom" returnType="String" visibility="public"/>
+        <Method name="setNom" returnType="void" visibility="public">
+          <Argument type="String" name="nom"/>
+        </Method>
+        <Method name="bailar" returnType="void" visibility="public"/>
+        <Method name="jugarFutbol" returnType="void" visibility="public"/>
+        <Method name="heredarDinero" returnType="void" visibility="public">
+          <Argument type="double" name="dinero"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Padre" package="herencia" visibility="public" xPosition="785.0" yPosition="26.0">
+      <Fields>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="protected"/>
+        <Field name="auto" type="Auto" visibility="protected"/>
+        <Field name="casa" type="Casa" visibility="protected"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="apellido"/>
+          <Argument type="Auto" name="a"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="comprarAuto" returnType="void" visibility="private">
+          <Argument type="Auto" name="auto"/>
+        </Method>
+        <Method name="construirCasa" returnType="void" visibility="private"/>
+        <Method name="getCasa" returnType="Casa" visibility="public"/>
+        <Method name="setCasa" returnType="void" visibility="public">
+          <Argument type="Casa" name="casa"/>
+        </Method>
+        <Method name="cantar" returnType="void" visibility="public"/>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="setApellido" returnType="void" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="getAuto" returnType="Auto" visibility="public"/>
+        <Method name="setAuto" returnType="void" visibility="public">
+          <Argument type="Auto" name="auto"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Interface name="Hermano" package="herencia" visibility="public" xPosition="200.0" yPosition="81.0">
+      <Methods>
+        <Method name="jugarFutbol" returnType="void" visibility="package"/>
+      </Methods>
+    </Interface>
+    <Interface name="Madre" package="herencia" visibility="public" xPosition="135.0" yPosition="296.0">
+      <Methods>
+        <Method name="bailar" returnType="void" visibility="package"/>
+        <Method name="heredarDinero" returnType="void" visibility="package">
+          <Argument type="double" name="dinero"/>
+        </Method>
+      </Methods>
+    </Interface>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="herencia.Hijo" target="herencia.Madre"/>
+    <ImplementsRelation name="&lt;&lt;implements&gt;&gt;" source="herencia.Hijo" target="herencia.Hermano"/>
+    <HasRelation name="auto" source="herencia.Padre" target="herencia.Auto" type="Aggregation" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <HasRelation name="casa1" source="herencia.Padre" target="herencia.Casa" type="Composition" sourceCardinality="0..1" targetCardinality="1..1"/>
+    <IsRelation name="is" source="herencia.Hijo" target="herencia.Padre"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

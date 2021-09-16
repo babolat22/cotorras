@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="Auto">
+  <ClassDiagramComponents>
+    <Class name="Auto" package="carreramortal" visibility="public" xPosition="106.0" yPosition="32.0">
+      <Fields>
+        <Field name="patente" type="String" visibility="private"/>
+        <Field name="color" type="String" visibility="private"/>
+        <Field name="combustible" type="double" visibility="private"/>
+        <Field name="auxilio" type="Rueda" visibility="private"/>
+        <Field name="ruedas" type="ArrayList&lt;Rueda&gt;" visibility="private"/>
+        <Field name="ruedaAuxilio" type="Rueda" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="patente"/>
+          <Argument type="String" name="color"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="colocarRueda" returnType="Rueda" visibility="public">
+          <Argument type="Rueda" name="rueda"/>
+        </Method>
+        <Method name="quitarRueda" returnType="Rueda" visibility="public">
+          <Argument type="Rueda" name="r"/>
+        </Method>
+        <Method name="quitarRueda" returnType="int" visibility="public">
+          <Argument type="int" name="posicion"/>
+        </Method>
+        <Method name="getRuedas" returnType="List&lt;Rueda&gt;" visibility="public"/>
+        <Method name="getAuxilio" returnType="Rueda" visibility="public"/>
+        <Method name="colocaAuxilio" returnType="Rueda" visibility="public">
+          <Argument type="Rueda" name="rueda"/>
+        </Method>
+        <Method name="setRueda" returnType="Rueda" visibility="public">
+          <Argument type="Rueda" name="rueda"/>
+        </Method>
+        <Method name="avanzar" returnType="double" visibility="public">
+          <Argument type="double" name="metros"/>
+        </Method>
+        <Method name="retroceder" returnType="double" visibility="public">
+          <Argument type="double" name="metros"/>
+        </Method>
+        <Method name="inflarTodas" returnType="void" visibility="public"/>
+        <Method name="untitledMethod" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Rueda" package="" visibility="public" xPosition="539.0" yPosition="32.0">
+      <Fields>
+        <Field name="marca" type="String" visibility="private"/>
+        <Field name="presion" type="double" visibility="private"/>
+        <Field name="a" type="Auto" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="String" name="m"/>
+          <Argument type="double" name="p"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="desinflar" returnType="void" visibility="public">
+          <Argument type="int" name="cant"/>
+        </Method>
+        <Method name="inflar" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="tiene" source="carreramortal.Auto" target="Rueda" type="Default" sourceCardinality="0..1" targetCardinality="0..1"/>
+    <HasRelation name="Ruedas" source="carreramortal.Auto" target="Rueda" type="Default" sourceCardinality="0..1" targetCardinality="0..*" collectionType="ArrayList"/>
+  </ClassDiagramRelations>
+</ClassDiagram>

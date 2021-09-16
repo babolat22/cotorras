@@ -1,0 +1,1094 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ClassDiagram name="2C-U2-TPO1-GRUPO1-master">
+  <ClassDiagramComponents>
+    <Class name="Alumno" package="ulp.entidades" visibility="public" xPosition="20.0" yPosition="20.0">
+      <Fields>
+        <Field name="id_alumno" type="int" visibility="private"/>
+        <Field name="nombre" type="String" visibility="private"/>
+        <Field name="apellido" type="String" visibility="private"/>
+        <Field name="dni" type="String" visibility="private"/>
+        <Field name="fecha_n" type="LocalDate" visibility="private"/>
+        <Field name="activo" type="boolean" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="String" name="dni"/>
+          <Argument type="LocalDate" name="fecha_n"/>
+          <Argument type="boolean" name="activo"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="int" name="id_alumno"/>
+          <Argument type="String" name="nombre"/>
+          <Argument type="String" name="apellido"/>
+          <Argument type="String" name="dni"/>
+          <Argument type="LocalDate" name="fecha_n"/>
+          <Argument type="boolean" name="activo"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId_alumno" returnType="int" visibility="public"/>
+        <Method name="setId_alumno" returnType="void" visibility="public">
+          <Argument type="int" name="id_alumno"/>
+        </Method>
+        <Method name="getNombre" returnType="String" visibility="public"/>
+        <Method name="setNombre" returnType="void" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="getApellido" returnType="String" visibility="public"/>
+        <Method name="setApellido" returnType="void" visibility="public">
+          <Argument type="String" name="apellido"/>
+        </Method>
+        <Method name="getDni" returnType="String" visibility="public"/>
+        <Method name="setDni" returnType="void" visibility="public">
+          <Argument type="String" name="dni"/>
+        </Method>
+        <Method name="getFecha_n" returnType="LocalDate" visibility="public"/>
+        <Method name="setFecha_n" returnType="void" visibility="public">
+          <Argument type="LocalDate" name="fecha_n"/>
+        </Method>
+        <Method name="isActivo" returnType="boolean" visibility="public"/>
+        <Method name="setActivo" returnType="void" visibility="public">
+          <Argument type="boolean" name="activo"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Inscripcion" package="ulp.entidades" visibility="public" xPosition="320.0" yPosition="20.0">
+      <Fields>
+        <Field name="id_inscripcion" type="int" visibility="private"/>
+        <Field name="alumno" type="Alumno" visibility="private"/>
+        <Field name="materia" type="Materia" visibility="private"/>
+        <Field name="calificacion" type="float" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="Alumno" name="alumno"/>
+          <Argument type="Materia" name="materia"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="Alumno" name="alumno"/>
+          <Argument type="Materia" name="materia"/>
+          <Argument type="float" name="calificacion"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="int" name="id_inscripcion"/>
+          <Argument type="Alumno" name="alumno"/>
+          <Argument type="Materia" name="materia"/>
+          <Argument type="float" name="calificacion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId_inscripcion" returnType="int" visibility="public"/>
+        <Method name="setId_inscripcion" returnType="void" visibility="public">
+          <Argument type="int" name="id_inscripcion"/>
+        </Method>
+        <Method name="getAlumno" returnType="Alumno" visibility="public"/>
+        <Method name="setAlumno" returnType="void" visibility="public">
+          <Argument type="Alumno" name="alumno"/>
+        </Method>
+        <Method name="getMateria" returnType="Materia" visibility="public"/>
+        <Method name="setMateria" returnType="void" visibility="public">
+          <Argument type="Materia" name="materia"/>
+        </Method>
+        <Method name="getCalificacion" returnType="double" visibility="public"/>
+        <Method name="setCalificacion" returnType="void" visibility="public">
+          <Argument type="float" name="calificacion"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Materia" package="ulp.entidades" visibility="public" xPosition="620.0" yPosition="20.0">
+      <Fields>
+        <Field name="id_materia" type="int" visibility="private"/>
+        <Field name="nombre_materia" type="String" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+        <Constructor visibility="public">
+          <Argument type="String" name="nombre_materia"/>
+        </Constructor>
+        <Constructor visibility="public">
+          <Argument type="int" name="id_materia"/>
+          <Argument type="String" name="nombre_materia"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="getId_materia" returnType="int" visibility="public"/>
+        <Method name="setId_materia" returnType="void" visibility="public">
+          <Argument type="int" name="id_materia"/>
+        </Method>
+        <Method name="getNombre_materia" returnType="String" visibility="public"/>
+        <Method name="setNombre_materia" returnType="void" visibility="public">
+          <Argument type="String" name="nombre_materia"/>
+        </Method>
+        <Method name="toString" returnType="String" visibility="public"/>
+        <Method name="compareTo" returnType="int" visibility="public">
+          <Argument type="Object" name="ob"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AlumnoData" package="ulp.modelo" visibility="public" xPosition="920.0" yPosition="20.0">
+      <Fields>
+        <Field name="c" type="Connection" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Conexion" name="conexion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="guardar_alumno" returnType="void" visibility="public">
+          <Argument type="Alumno" name="alumno"/>
+        </Method>
+        <Method name="buscar_alumno" returnType="Alumno" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="buscar_alumno" returnType="Alumno" visibility="public">
+          <Argument type="String" name="dni"/>
+        </Method>
+        <Method name="borrar_alumno" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="borrar_alumno" returnType="void" visibility="public">
+          <Argument type="String" name="dni"/>
+        </Method>
+        <Method name="modificar_alumno" returnType="void" visibility="public">
+          <Argument type="Alumno" name="alumno"/>
+        </Method>
+        <Method name="ver_alumnos" returnType="List&lt;Alumno&gt;" visibility="public"/>
+        <Method name="ver_alumnos_activos" returnType="List&lt;Alumno&gt;" visibility="public"/>
+        <Method name="ver_alumnos_inactivos" returnType="List&lt;Alumno&gt;" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Conexion" package="ulp.modelo" visibility="public" xPosition="1220.0" yPosition="20.0">
+      <Fields>
+        <Field name="base" type="String" visibility="private" isFinal="true"/>
+        <Field name="url" type="String" visibility="private" isFinal="true"/>
+        <Field name="user" type="String" visibility="private" isFinal="true"/>
+        <Field name="pass" type="String" visibility="private" isFinal="true"/>
+        <Field name="conexion" type="Connection" visibility="private"/>
+      </Fields>
+      <Constructors/>
+      <Methods>
+        <Method name="getConnection" returnType="Connection" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="InscripcionesData" package="ulp.modelo" visibility="public" xPosition="1520.0" yPosition="20.0">
+      <Fields>
+        <Field name="conexion" type="Conexion" visibility="private"/>
+        <Field name="c" type="Connection" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Conexion" name="conexion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="inscribir_alumno" returnType="void" visibility="public">
+          <Argument type="Inscripcion" name="inscripcion"/>
+        </Method>
+        <Method name="desinscribir_alumno" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="desinscribir_alumno" returnType="void" visibility="public">
+          <Argument type="int" name="id_alumno"/>
+          <Argument type="int" name="id_materia"/>
+        </Method>
+        <Method name="desinscribir_alumno" returnType="void" visibility="public">
+          <Argument type="String" name="dni"/>
+          <Argument type="String" name="nombre_materia"/>
+        </Method>
+        <Method name="registrar_nota" returnType="void" visibility="public">
+          <Argument type="int" name="id_alumno"/>
+          <Argument type="int" name="id_materia"/>
+          <Argument type="double" name="nota"/>
+        </Method>
+        <Method name="registrar_nota" returnType="void" visibility="public">
+          <Argument type="String" name="dni"/>
+          <Argument type="String" name="nombre_materia"/>
+          <Argument type="double" name="nota"/>
+        </Method>
+        <Method name="alumnos_en_materia" returnType="List&lt;Alumno&gt;" visibility="public">
+          <Argument type="int" name="id_materia"/>
+        </Method>
+        <Method name="alumnos_en_materia" returnType="List&lt;Alumno&gt;" visibility="public">
+          <Argument type="String" name="nombre_materia"/>
+        </Method>
+        <Method name="materias_alumno" returnType="List&lt;Materia&gt;" visibility="public">
+          <Argument type="int" name="id_alumno"/>
+        </Method>
+        <Method name="obtener_materias_alumno_nocursa" returnType="List&lt;Materia&gt;" visibility="public">
+          <Argument type="int" name="id_alumno"/>
+        </Method>
+        <Method name="materias_alumno" returnType="List&lt;Materia&gt;" visibility="public">
+          <Argument type="String" name="dni"/>
+        </Method>
+        <Method name="notas_alumno" returnType="Map&lt;Materia, Double&gt;" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="notas_alumno" returnType="Map&lt;Materia, Double&gt;" visibility="public">
+          <Argument type="String" name="dni"/>
+        </Method>
+        <Method name="alumnos_en_materias" returnType="List&lt;Inscripcion&gt;" visibility="public"/>
+        <Method name="inscripciones_en_materia" returnType="List&lt;Inscripcion&gt;" visibility="public">
+          <Argument type="Materia" name="materia"/>
+        </Method>
+        <Method name="inscripcionesAlumno" returnType="List&lt;Inscripcion&gt;" visibility="public">
+          <Argument type="Alumno" name="alumno"/>
+        </Method>
+        <Method name="alumnos_activos_en_materias" returnType="List&lt;Inscripcion&gt;" visibility="public"/>
+        <Method name="alumnos_inactivos_en_materias" returnType="List&lt;Inscripcion&gt;" visibility="public"/>
+        <Method name="buscarAlumno" returnType="Alumno" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="buscarMateria" returnType="Materia" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="buscarAlumno" returnType="Alumno" visibility="public">
+          <Argument type="String" name="dni"/>
+        </Method>
+        <Method name="buscarMateria" returnType="Materia" visibility="public">
+          <Argument type="String" name="nombre"/>
+        </Method>
+        <Method name="inscripcion_alumno_materia" returnType="Inscripcion" visibility="public">
+          <Argument type="int" name="id_alumno"/>
+          <Argument type="int" name="id_materia"/>
+        </Method>
+        <Method name="buscar_inscripcion" returnType="Inscripcion" visibility="public">
+          <Argument type="Alumno" name="alumno"/>
+          <Argument type="Materia" name="materia"/>
+        </Method>
+        <Method name="registrar_nota" returnType="void" visibility="public">
+          <Argument type="int" name="id_inscripcion"/>
+          <Argument type="double" name="nota"/>
+        </Method>
+        <Method name="registrar_nota" returnType="void" visibility="public">
+          <Argument type="Inscripcion" name="inscripcion"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="MateriaData" package="ulp.modelo" visibility="public" xPosition="1820.0" yPosition="20.0">
+      <Fields>
+        <Field name="c" type="Connection" visibility="package"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public">
+          <Argument type="Conexion" name="conexion"/>
+        </Constructor>
+      </Constructors>
+      <Methods>
+        <Method name="cargar_materia" returnType="void" visibility="public">
+          <Argument type="Materia" name="materia"/>
+        </Method>
+        <Method name="actualizar_materia" returnType="void" visibility="public">
+          <Argument type="Materia" name="materia"/>
+        </Method>
+        <Method name="buscar_materia" returnType="Materia" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="buscar_materia" returnType="Materia" visibility="public">
+          <Argument type="String" name="nombre_materia"/>
+        </Method>
+        <Method name="borrar_materia" returnType="void" visibility="public">
+          <Argument type="int" name="id"/>
+        </Method>
+        <Method name="borrar_materia" returnType="void" visibility="public">
+          <Argument type="String" name="nombre_materia"/>
+        </Method>
+        <Method name="obtener_materias" returnType="List&lt;Materia&gt;" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="Universidad" package="ulp" visibility="public" xPosition="2120.0" yPosition="20.0">
+      <Fields/>
+      <Constructors/>
+      <Methods>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String[]" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AlumnoActualizar" package="ulp.vista" visibility="public" xPosition="20.0" yPosition="420.0">
+      <Fields>
+        <Field name="ad" type="AlumnoData" visibility="private"/>
+        <Field name="conexion" type="Conexion" visibility="private"/>
+        <Field name="alumno_aux" type="Alumno" visibility="private"/>
+        <Field name="bg_jrb_buscar" type="javax.swing.ButtonGroup" visibility="private"/>
+        <Field name="bg_rb_activo" type="javax.swing.ButtonGroup" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jb_actualizar_alumno" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jb_buscar_alumno" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jb_limpiar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jb_salir" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jdc_fecha_nac" type="com.toedter.calendar.JDateChooser" visibility="private"/>
+        <Field name="jl_aviso_dni" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jl_buscar" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jrb_activo_no" type="javax.swing.JRadioButton" visibility="private"/>
+        <Field name="jrb_activo_si" type="javax.swing.JRadioButton" visibility="private"/>
+        <Field name="jrb_por_dni" type="javax.swing.JRadioButton" visibility="private"/>
+        <Field name="jrb_por_id" type="javax.swing.JRadioButton" visibility="private"/>
+        <Field name="jtf_apellido_alumno" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jtf_dni_id" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jtf_dni_resultado" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jtf_nombre_alumno" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="habilitarCampos" returnType="void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jb_actualizar_alumnoActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jb_buscar_alumnoActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jb_limpiarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jb_salirActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jrb_por_dniActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jtf_dni_idActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jtf_dni_idKeyTyped" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+        <Method name="jrb_por_idActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jtf_dni_resultadoKeyTyped" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+        <Method name="jtf_nombre_alumnoKeyTyped" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+        <Method name="jtf_apellido_alumnoKeyTyped" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AlumnoAlta" package="ulp.vista" visibility="public" xPosition="320.0" yPosition="420.0">
+      <Fields>
+        <Field name="conexion" type="Conexion" visibility="package"/>
+        <Field name="alumno" type="Alumno" visibility="package"/>
+        <Field name="alumno_data" type="AlumnoData" visibility="package"/>
+        <Field name="materia_data" type="MateriaData" visibility="package"/>
+        <Field name="ins_data" type="InscripcionesData" visibility="package"/>
+        <Field name="buttonGroup1" type="javax.swing.ButtonGroup" visibility="public"/>
+        <Field name="cajaFechaN" type="com.toedter.calendar.JDateChooser" visibility="public"/>
+        <Field name="cajaSalida" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="filler1" type="javax.swing.Box.Filler" visibility="public"/>
+        <Field name="filler2" type="javax.swing.Box.Filler" visibility="public"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="jLabel10" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="jLabel9" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="jSeparator2" type="javax.swing.JSeparator" visibility="public"/>
+        <Field name="jSeparator3" type="javax.swing.JSeparator" visibility="public"/>
+        <Field name="jb_guardar" type="javax.swing.JButton" visibility="public"/>
+        <Field name="jb_limpiar" type="javax.swing.JButton" visibility="public"/>
+        <Field name="jb_salir" type="javax.swing.JButton" visibility="public"/>
+        <Field name="jcb_activo" type="javax.swing.JComboBox&lt;String&gt;" visibility="public"/>
+        <Field name="jl_aviso_activo" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="jl_aviso_apellido" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="jl_aviso_dni" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="jl_aviso_nombre" type="javax.swing.JLabel" visibility="public"/>
+        <Field name="jtf_apellido" type="javax.swing.JTextField" visibility="public"/>
+        <Field name="jtf_dni" type="javax.swing.JTextField" visibility="public"/>
+        <Field name="jtf_id" type="javax.swing.JTextField" visibility="public"/>
+        <Field name="jtf_nombre" type="javax.swing.JTextField" visibility="public"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="Limpiar" returnType="void" visibility="public"/>
+        <Method name="delay" returnType="void" visibility="public">
+          <Argument type="String" name="mensaje"/>
+          <Argument type="int" name="a"/>
+          <Argument type="int" name="b"/>
+        </Method>
+        <Method name="limpiarJL" returnType="void" visibility="public">
+          <Argument type="JLabel" name="var"/>
+          <Argument type="int" name="a"/>
+          <Argument type="int" name="b"/>
+        </Method>
+        <Method name="escribirEstados" returnType="void" visibility="public"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jcb_activoActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jb_guardarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jb_salirActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jb_limpiarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jtf_idActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jtf_nombreKeyTyped" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+        <Method name="jtf_dniKeyTyped" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+        <Method name="jtf_apellidoKeyTyped" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+        <Method name="jtf_idKeyTyped" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+        <Method name="jcb_activoKeyTyped" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+        <Method name="jtf_dniActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jtf_nombreActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jl_aviso_nombreKeyTyped" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+        <Method name="cajaFechaNKeyTyped" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="AlumnoBaja" package="ulp.vista" visibility="public" xPosition="620.0" yPosition="420.0">
+      <Fields>
+        <Field name="ad" type="AlumnoData" visibility="private"/>
+        <Field name="conexion" type="Conexion" visibility="private"/>
+        <Field name="bg_buscar" type="javax.swing.ButtonGroup" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel7" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jb_baja_alumno" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jb_buscar_alumno" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jb_limpiar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jb_salir" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jl_aviso_dni" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jl_buscar" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jrb_por_dni" type="javax.swing.JRadioButton" visibility="private"/>
+        <Field name="jrb_por_id" type="javax.swing.JRadioButton" visibility="private"/>
+        <Field name="jtf_activo" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jtf_apellido_alumno" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jtf_dni" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jtf_fecha_n" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jtf_id_alumno" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jtf_nombre_alumno" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jb_baja_alumnoActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jb_buscar_alumnoActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jb_salirActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jb_limpiarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jtf_dniActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jrb_por_idActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jtf_dniKeyTyped" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+        <Method name="jrb_por_dniActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ConsultaAlumnosPorMateria" package="ulp.vista" visibility="public" xPosition="920.0" yPosition="420.0">
+      <Fields>
+        <Field name="conexion" type="Conexion" visibility="private"/>
+        <Field name="md" type="MateriaData" visibility="private"/>
+        <Field name="ad" type="AlumnoData" visibility="private"/>
+        <Field name="id" type="InscripcionesData" visibility="private"/>
+        <Field name="modelo" type="DefaultTableModel" visibility="private"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton2" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jbg_buscar_materia" type="javax.swing.ButtonGroup" visibility="private"/>
+        <Field name="jcb_materias" type="javax.swing.JComboBox&lt;Materia&gt;" visibility="private"/>
+        <Field name="jt_alumnos" type="javax.swing.JTable" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="armarCabeceraTabla" returnType="void" visibility="private"/>
+        <Method name="borrarFilasTabla" returnType="void" visibility="private"/>
+        <Method name="cargarComboBoxMaterias" returnType="void" visibility="private"/>
+        <Method name="cargarTablaAlumnos" returnType="void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jButton2ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jcb_materiasActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="ConsultaMateriasPorAlumno" package="ulp.vista" visibility="public" xPosition="1220.0" yPosition="420.0">
+      <Fields>
+        <Field name="ad" type="AlumnoData" visibility="private"/>
+        <Field name="md" type="MateriaData" visibility="private"/>
+        <Field name="id" type="InscripcionesData" visibility="private"/>
+        <Field name="conexion" type="Conexion" visibility="private"/>
+        <Field name="modelo" type="DefaultTableModel" visibility="private"/>
+        <Field name="bg_jrb_buscar" type="javax.swing.ButtonGroup" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel6" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel7" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jb_buscar_alumno" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jb_limpiar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jb_salir" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jl_aviso_dni" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jl_buscar" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jrb_por_dni" type="javax.swing.JRadioButton" visibility="private"/>
+        <Field name="jrb_por_id" type="javax.swing.JRadioButton" visibility="private"/>
+        <Field name="jt_materias" type="javax.swing.JTable" visibility="private"/>
+        <Field name="jtf_activo" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jtf_apellido_alumno" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jtf_dni" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jtf_fecha_n" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jtf_id_alumno" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jtf_nombre_alumno" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="armarCabeceraTabla" returnType="void" visibility="private"/>
+        <Method name="borrarFilasTabla" returnType="void" visibility="private"/>
+        <Method name="cargarTablaMaterias" returnType="void" visibility="private">
+          <Argument type="Alumno" name="alumno"/>
+        </Method>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jtf_dniActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jtf_dniKeyTyped" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+        <Method name="jrb_por_dniActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jrb_por_idActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jb_buscar_alumnoActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jb_limpiarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jb_salirActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="MateriaActualizar" package="ulp.vista" visibility="public" xPosition="1520.0" yPosition="420.0">
+      <Fields>
+        <Field name="conexion" type="Conexion" visibility="package"/>
+        <Field name="alumno" type="Alumno" visibility="package"/>
+        <Field name="materia" type="Materia" visibility="package"/>
+        <Field name="alumno_data" type="AlumnoData" visibility="package"/>
+        <Field name="materia_data" type="MateriaData" visibility="package"/>
+        <Field name="ins_data" type="InscripcionesData" visibility="package"/>
+        <Field name="modelo" type="DefaultTableModel" visibility="package"/>
+        <Field name="materias" type="List&lt;Materia&gt;" visibility="package"/>
+        <Field name="sAlumno" type="ListSelectionModel" visibility="package"/>
+        <Field name="filler1" type="javax.swing.Box.Filler" visibility="private"/>
+        <Field name="filler2" type="javax.swing.Box.Filler" visibility="private"/>
+        <Field name="filler3" type="javax.swing.Box.Filler" visibility="private"/>
+        <Field name="filler4" type="javax.swing.Box.Filler" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jb_actualizar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jb_salir" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jt_materias" type="javax.swing.JTable" visibility="private"/>
+        <Field name="jtf_nombre" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="cargarMaterias" returnType="void" visibility="private"/>
+        <Method name="armarCabeceraTabla" returnType="void" visibility="private"/>
+        <Method name="borrarFilasTabla" returnType="void" visibility="private"/>
+        <Method name="Limpiar" returnType="void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jb_actualizarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jtf_nombreActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jtf_nombreKeyTyped" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+        <Method name="jb_salirActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="alumnoLineaSelecionada" returnType="void" visibility="private">
+          <Argument type="JTable" name="tb"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="MateriaAlta" package="ulp.vista" visibility="public" xPosition="1820.0" yPosition="420.0">
+      <Fields>
+        <Field name="conexion" type="Conexion" visibility="package"/>
+        <Field name="alumno" type="Alumno" visibility="package"/>
+        <Field name="materia" type="Materia" visibility="package"/>
+        <Field name="alumno_data" type="AlumnoData" visibility="package"/>
+        <Field name="materia_data" type="MateriaData" visibility="package"/>
+        <Field name="ins_data" type="InscripcionesData" visibility="package"/>
+        <Field name="modelo" type="DefaultTableModel" visibility="package"/>
+        <Field name="materias" type="List&lt;Materia&gt;" visibility="package"/>
+        <Field name="cajaSalida" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="filler1" type="javax.swing.Box.Filler" visibility="private"/>
+        <Field name="filler2" type="javax.swing.Box.Filler" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel3" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jScrollPane2" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jTable1" type="javax.swing.JTable" visibility="private"/>
+        <Field name="jb_guardar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jb_salir" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jt_materia" type="javax.swing.JTable" visibility="private"/>
+        <Field name="jtf_id" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jtf_nombre" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="Limpiar" returnType="void" visibility="private"/>
+        <Method name="cargarMaterias" returnType="void" visibility="private"/>
+        <Method name="armarCabeceraTabla" returnType="void" visibility="private"/>
+        <Method name="borrarFilasTabla" returnType="void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jb_guardarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jb_salirActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jtf_nombreKeyTyped" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+        <Method name="jtf_nombreActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="MateriaBaja" package="ulp.vista" visibility="public" xPosition="2120.0" yPosition="420.0">
+      <Fields>
+        <Field name="md" type="MateriaData" visibility="private"/>
+        <Field name="conexion" type="Conexion" visibility="private"/>
+        <Field name="modelo_tabla" type="DefaultTableModel" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jScrollPane2" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jb_actualizar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jb_borrar_materia" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jb_salir" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jt_materias" type="javax.swing.JTable" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="armaCabeceraTabla" returnType="void" visibility="private"/>
+        <Method name="borraFilasTabla" returnType="void" visibility="private"/>
+        <Method name="cargaMaterias" returnType="void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jb_borrar_materiaActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jb_salirActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jb_actualizarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="Principal" package="ulp.vista" visibility="public" xPosition="20.0" yPosition="820.0">
+      <Fields>
+        <Field name="escritorio" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="item_formulario_alunno" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="item_formulario_materia" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="item_salir" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jMenu4" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="jMenuBar1" type="javax.swing.JMenuBar" visibility="private"/>
+        <Field name="jMenuItem2" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jmi_actualizar_alumno" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jmi_actualizar_materia" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jmi_baja_alumno" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jmi_baja_materia" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jmi_cons_m_x_a" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jmi_listado_alumno" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jmi_manejo_inscripcion" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="jmi_manipulacion_notas" type="javax.swing.JMenuItem" visibility="private"/>
+        <Field name="menu_alumnos" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="menu_archivo" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="menu_cargar_notas" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="menu_consultas" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="menu_inscripcion" type="javax.swing.JMenu" visibility="private"/>
+        <Field name="menu_materias" type="javax.swing.JMenu" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="item_formulario_materiaActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="item_formulario_alunnoActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jmi_listado_alumnoActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jmi_manejo_inscripcionActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jmi_manipulacion_notasActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="item_salirActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jmi_actualizar_materiaActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jmi_baja_alumnoActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jmi_actualizar_alumnoActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jmi_baja_materiaActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jmi_cons_m_x_aActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="main" returnType="void" visibility="public" isStatic="true">
+          <Argument type="String" name="args"/>
+        </Method>
+      </Methods>
+    </Class>
+    <Class name="VistaCargaNota" package="ulp.vista" visibility="public" xPosition="320.0" yPosition="820.0">
+      <Fields>
+        <Field name="conexion" type="Conexion" visibility="private"/>
+        <Field name="materia_Data" type="MateriaData" visibility="private"/>
+        <Field name="alumno_data" type="AlumnoData" visibility="private"/>
+        <Field name="inscripcion_data" type="InscripcionesData" visibility="private"/>
+        <Field name="modelo" type="DefaultTableModel" visibility="private"/>
+        <Field name="alumnoAux" type="Alumno" visibility="private"/>
+        <Field name="materiaAux" type="Materia" visibility="private"/>
+        <Field name="buttonGroup1" type="javax.swing.ButtonGroup" visibility="private"/>
+        <Field name="jButton1" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton_buscar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton_guardar" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jButton_salir" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jFormattedTextField_nota" type="javax.swing.JFormattedTextField" visibility="private"/>
+        <Field name="jL_buscarMateria" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel4" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel5" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel_nota" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jPanel1" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel3" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jPanel4" type="javax.swing.JPanel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jTable1" type="javax.swing.JTable" visibility="private"/>
+        <Field name="jb_buscInscri" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jcb_alumno" type="javax.swing.JComboBox&lt;Alumno&gt;" visibility="private"/>
+        <Field name="jcb_materias" type="javax.swing.JComboBox&lt;Materia&gt;" visibility="private"/>
+        <Field name="jchb_porCombo" type="javax.swing.JCheckBox" visibility="private"/>
+        <Field name="jchb_porDni" type="javax.swing.JCheckBox" visibility="private"/>
+        <Field name="jchb_porId" type="javax.swing.JCheckBox" visibility="private"/>
+        <Field name="jlIngreseApellido" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jl_IngreseId" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jl_PorCombobox" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jl_buscarAlumno" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jl_iDmateria" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jl_idAlumno" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jl_ingreseDni" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jl_nombreAlumno" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jl_nombreMateria" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jl_numeroInscr" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="jl_titulo" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jtf_ingreseValor" type="javax.swing.JTextField" visibility="private"/>
+        <Field name="txtnota" type="javax.swing.JTextField" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="getMateria" returnType="Materia" visibility="public"/>
+        <Method name="setMateria" returnType="void" visibility="public">
+          <Argument type="Materia" name="materia"/>
+        </Method>
+        <Method name="getAlumno" returnType="Alumno" visibility="public"/>
+        <Method name="setAlumno" returnType="void" visibility="public">
+          <Argument type="Alumno" name="alumno"/>
+        </Method>
+        <Method name="limpiarInscripcion" returnType="void" visibility="public"/>
+        <Method name="cargarMateriasxAlumno" returnType="void" visibility="public">
+          <Argument type="Alumno" name="alumno"/>
+        </Method>
+        <Method name="cargarAlumnos" returnType="void" visibility="public"/>
+        <Method name="mostrarInscripciones" returnType="void" visibility="public"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jchb_porDniActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton_salirActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jchb_porIdActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jcb_materiasActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton_buscarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton_limpiarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jButton_guardarActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jtf_ingreseValorActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jcb_materiasItemStateChanged" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ItemEvent" name="evt"/>
+        </Method>
+        <Method name="jtf_ingreseValorFocusLost" returnType="void" visibility="private">
+          <Argument type="java.awt.event.FocusEvent" name="evt"/>
+        </Method>
+        <Method name="jButton1ActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jchb_porComboActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jcb_alumnoActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jcb_alumnoMouseEntered" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="jcb_alumnoMouseClicked" returnType="void" visibility="private">
+          <Argument type="java.awt.event.MouseEvent" name="evt"/>
+        </Method>
+        <Method name="jcb_alumnoFocusLost" returnType="void" visibility="private">
+          <Argument type="java.awt.event.FocusEvent" name="evt"/>
+        </Method>
+        <Method name="jcb_alumnoItemStateChanged" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ItemEvent" name="evt"/>
+        </Method>
+        <Method name="jFormattedTextField_notaActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jFormattedTextField_notaFocusLost" returnType="void" visibility="private">
+          <Argument type="java.awt.event.FocusEvent" name="evt"/>
+        </Method>
+        <Method name="jb_buscInscriActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jFormattedTextField_notaKeyTyped" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+        <Method name="jtf_ingreseValorKeyTyped" returnType="void" visibility="private">
+          <Argument type="java.awt.event.KeyEvent" name="evt"/>
+        </Method>
+        <Method name="limpiar" returnType="void" visibility="public"/>
+        <Method name="escribirEstados" returnType="void" visibility="public">
+          <Argument type="String" name="estado"/>
+        </Method>
+        <Method name="hacerFoco" returnType="void" visibility="public"/>
+      </Methods>
+    </Class>
+    <Class name="vistaInscripcion" package="ulp.vista" visibility="public" xPosition="620.0" yPosition="820.0">
+      <Fields>
+        <Field name="conexion" type="Conexion" visibility="package"/>
+        <Field name="alumno_data" type="AlumnoData" visibility="package"/>
+        <Field name="materia_data" type="MateriaData" visibility="package"/>
+        <Field name="ins_data" type="InscripcionesData" visibility="package"/>
+        <Field name="modelo" type="DefaultTableModel" visibility="package"/>
+        <Field name="buttonGroup1" type="javax.swing.ButtonGroup" visibility="private"/>
+        <Field name="jLabel1" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jLabel2" type="javax.swing.JLabel" visibility="private"/>
+        <Field name="jScrollPane1" type="javax.swing.JScrollPane" visibility="private"/>
+        <Field name="jb_anular" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jb_inscribir" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jb_salir" type="javax.swing.JButton" visibility="private"/>
+        <Field name="jcb_alumnos" type="javax.swing.JComboBox&lt;Alumno&gt;" visibility="private"/>
+        <Field name="jrb_inscriptas" type="javax.swing.JRadioButton" visibility="private"/>
+        <Field name="jrb_no_inscriptas" type="javax.swing.JRadioButton" visibility="private"/>
+        <Field name="jt_materia" type="javax.swing.JTable" visibility="private"/>
+      </Fields>
+      <Constructors>
+        <Constructor visibility="public"/>
+      </Constructors>
+      <Methods>
+        <Method name="cargarNoInscriptas" returnType="void" visibility="private"/>
+        <Method name="cargarInscriptas" returnType="void" visibility="private"/>
+        <Method name="armarCabeceraTabla" returnType="void" visibility="private"/>
+        <Method name="borrarFilasTabla" returnType="void" visibility="private"/>
+        <Method name="cargarAlumnos" returnType="void" visibility="private"/>
+        <Method name="initComponents" returnType="// &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
+void" visibility="private"/>
+        <Method name="jb_salirActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jcb_alumnosActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jrb_inscriptasActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jrb_no_inscriptasActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jb_anularActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+        <Method name="jb_inscribirActionPerformed" returnType="void" visibility="private">
+          <Argument type="java.awt.event.ActionEvent" name="evt"/>
+        </Method>
+      </Methods>
+    </Class>
+  </ClassDiagramComponents>
+  <ClassDiagramRelations>
+    <HasRelation name="conexion" source="ulp.vista.MateriaAlta" target="ulp.modelo.Conexion" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ins_data" source="ulp.vista.AlumnoAlta" target="ulp.modelo.InscripcionesData" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="id" source="ulp.vista.ConsultaAlumnosPorMateria" target="ulp.modelo.InscripcionesData" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="materia" source="ulp.vista.MateriaActualizar" target="ulp.entidades.Materia" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="materia_data" source="ulp.vista.AlumnoAlta" target="ulp.modelo.MateriaData" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="materia_data" source="ulp.vista.vistaInscripcion" target="ulp.modelo.MateriaData" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ad" source="ulp.vista.ConsultaAlumnosPorMateria" target="ulp.modelo.AlumnoData" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="materias" source="ulp.vista.MateriaActualizar" target="ulp.entidades.Materia" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Materia&gt;"/>
+    <HasRelation name="materia_Data" source="ulp.vista.VistaCargaNota" target="ulp.modelo.MateriaData" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="md" source="ulp.vista.MateriaBaja" target="ulp.modelo.MateriaData" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ad" source="ulp.vista.AlumnoActualizar" target="ulp.modelo.AlumnoData" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ulp.vista.VistaCargaNota" target="ulp.entidades.Materia" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="conexion" source="ulp.vista.ConsultaMateriasPorAlumno" target="ulp.modelo.Conexion" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="conexion" source="ulp.vista.AlumnoBaja" target="ulp.modelo.Conexion" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="md" source="ulp.vista.ConsultaMateriasPorAlumno" target="ulp.modelo.MateriaData" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="materia" source="ulp.entidades.Inscripcion" target="ulp.entidades.Materia" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="alumno" source="ulp.vista.MateriaActualizar" target="ulp.entidades.Alumno" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="conexion" source="ulp.vista.ConsultaAlumnosPorMateria" target="ulp.modelo.Conexion" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="alumnoAux" source="ulp.vista.VistaCargaNota" target="ulp.entidades.Alumno" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="materia" source="ulp.vista.MateriaAlta" target="ulp.entidades.Materia" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ins_data" source="ulp.vista.MateriaAlta" target="ulp.modelo.InscripcionesData" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="alumno_data" source="ulp.vista.MateriaActualizar" target="ulp.modelo.AlumnoData" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="materias" source="ulp.vista.MateriaAlta" target="ulp.entidades.Materia" type="Aggregation" sourceCardinality="1..1" targetCardinality="0..*" collectionType="List&lt;Materia&gt;"/>
+    <UseRelation source="ulp.entidades.Inscripcion" target="ulp.entidades.Alumno" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ulp.modelo.MateriaData" target="ulp.entidades.Materia" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ulp.modelo.InscripcionesData" target="ulp.entidades.Materia" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="id" source="ulp.vista.ConsultaMateriasPorAlumno" target="ulp.modelo.InscripcionesData" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="jcb_alumno" source="ulp.vista.VistaCargaNota" target="ulp.entidades.Alumno" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="alumno" source="ulp.entidades.Inscripcion" target="ulp.entidades.Alumno" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ulp.modelo.InscripcionesData" target="ulp.entidades.Inscripcion" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="alumno_data" source="ulp.vista.MateriaAlta" target="ulp.modelo.AlumnoData" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="alumno" source="ulp.vista.MateriaAlta" target="ulp.entidades.Alumno" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="jcb_materias" source="ulp.vista.ConsultaAlumnosPorMateria" target="ulp.entidades.Materia" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ins_data" source="ulp.vista.MateriaActualizar" target="ulp.modelo.InscripcionesData" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ulp.vista.VistaCargaNota" target="ulp.entidades.Alumno" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="conexion" source="ulp.vista.AlumnoActualizar" target="ulp.modelo.Conexion" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="materia_data" source="ulp.vista.MateriaActualizar" target="ulp.modelo.MateriaData" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="conexion" source="ulp.vista.MateriaBaja" target="ulp.modelo.Conexion" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ulp.entidades.Inscripcion" target="ulp.entidades.Materia" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="materia_data" source="ulp.vista.MateriaAlta" target="ulp.modelo.MateriaData" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="jcb_alumnos" source="ulp.vista.vistaInscripcion" target="ulp.entidades.Alumno" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ad" source="ulp.vista.ConsultaMateriasPorAlumno" target="ulp.modelo.AlumnoData" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="jcb_materias" source="ulp.vista.VistaCargaNota" target="ulp.entidades.Materia" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="conexion" source="ulp.vista.VistaCargaNota" target="ulp.modelo.Conexion" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="conexion" source="ulp.vista.AlumnoAlta" target="ulp.modelo.Conexion" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="alumno_data" source="ulp.vista.vistaInscripcion" target="ulp.modelo.AlumnoData" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="alumno_data" source="ulp.vista.AlumnoAlta" target="ulp.modelo.AlumnoData" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ulp.vista.ConsultaMateriasPorAlumno" target="ulp.entidades.Alumno" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="conexion" source="ulp.vista.vistaInscripcion" target="ulp.modelo.Conexion" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="conexion" source="ulp.vista.MateriaActualizar" target="ulp.modelo.Conexion" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ad" source="ulp.vista.AlumnoBaja" target="ulp.modelo.AlumnoData" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="materiaAux" source="ulp.vista.VistaCargaNota" target="ulp.entidades.Materia" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="md" source="ulp.vista.ConsultaAlumnosPorMateria" target="ulp.modelo.MateriaData" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ulp.modelo.InscripcionesData" target="ulp.entidades.Alumno" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="alumno" source="ulp.vista.AlumnoAlta" target="ulp.entidades.Alumno" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="alumno_data" source="ulp.vista.VistaCargaNota" target="ulp.modelo.AlumnoData" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="inscripcion_data" source="ulp.vista.VistaCargaNota" target="ulp.modelo.InscripcionesData" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="alumno_aux" source="ulp.vista.AlumnoActualizar" target="ulp.entidades.Alumno" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="ins_data" source="ulp.vista.vistaInscripcion" target="ulp.modelo.InscripcionesData" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <HasRelation name="conexion" source="ulp.modelo.InscripcionesData" target="ulp.modelo.Conexion" type="Aggregation" sourceCardinality="1..1" targetCardinality="1..1"/>
+    <UseRelation source="ulp.modelo.AlumnoData" target="ulp.entidades.Alumno" sourceCardinality="1..1" targetCardinality="1..1"/>
+  </ClassDiagramRelations>
+</ClassDiagram>
